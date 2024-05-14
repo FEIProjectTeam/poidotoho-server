@@ -1,9 +1,11 @@
-from ninja import ModelSchema
+from ninja import ModelSchema, Field
 
 from api.models import GamingSession
 
 
 class GamingSessionSchema(ModelSchema):
+    grade: int = Field(..., ge=1, le=9)
+
     class Meta:
         model = GamingSession
-        fields = ["nickname", "grade", "score", "time_left"]
+        fields = ["nickname", "score", "time_left"]
