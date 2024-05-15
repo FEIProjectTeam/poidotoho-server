@@ -16,3 +16,9 @@ class SchoolSchema(ModelSchema):
     class Meta:
         model = School
         fields = ["id", "name"]
+
+
+class LeaderboardSchema(ModelSchema):
+    class Meta:
+        model = GamingSession
+        fields = ["nickname", "score", "time_left"]

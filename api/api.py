@@ -1,16 +1,17 @@
 from django.shortcuts import get_object_or_404
 from ninja import NinjaAPI
+from ninja.pagination import paginate
 
 from api.models import GamingSession, School
-from api.schemas import GamingSessionSchema, SchoolSchema
+from api.schemas import GamingSessionSchema, SchoolSchema, LeaderboardSchema
 
 api = NinjaAPI()
 
 
-@api.get("/gaming-sessions", response=list[GamingSessionSchema])
-def list_gaming_sessions(request):
-    qs = GamingSession.objects.all()
-    return qs
+@api.get("/leaderboard", response=list[LeaderboardSchema])
+@paginate
+def list_leaderboard(request):
+    return GamingSession.objects.all().order_by("-score", "-time_left")
 
 
 @api.post("/gaming-sessions/create")
