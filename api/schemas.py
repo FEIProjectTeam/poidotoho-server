@@ -5,11 +5,13 @@ from api.models import GamingSession, School
 
 class GamingSessionSchema(ModelSchema):
     grade: int = Field(..., ge=1, le=9)
+    score: int = Field(..., ge=0, le=100)
+    time_left: int = Field(..., ge=0, le=1500)
     school_id: int
 
     class Meta:
         model = GamingSession
-        fields = ["nickname", "score", "time_left"]
+        fields = ["nickname"]
 
 
 class SchoolSchema(ModelSchema):
