@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure--umzy4k3#+wlb)#=g@z9px#g7ah(z%lq5mjf##7c)59epg&5@d
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["b2bportalacc.csobpoistovna.sk", "b2bgate.csobpoistovna.sk"]
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
