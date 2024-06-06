@@ -21,6 +21,6 @@ from django.urls import path
 from api.api import api
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
-    path("api/", api.urls),
+    path("poidotoho-server/admin/", admin.site.urls),
+    path("poidotoho-server/api/", api.urls),
 ]
