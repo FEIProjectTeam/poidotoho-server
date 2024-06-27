@@ -5,7 +5,7 @@ from ninja.pagination import paginate
 from api.models import GamingSession, School
 from api.schemas import GamingSessionSchema, SchoolSchema, LeaderboardSchema
 
-api = NinjaAPI()
+api = NinjaAPI(docs_url=None)
 
 
 @api.get("/leaderboard", response=list[LeaderboardSchema])
