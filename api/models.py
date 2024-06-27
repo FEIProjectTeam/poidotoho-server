@@ -1,4 +1,3 @@
-from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
 
 
@@ -11,7 +10,7 @@ class School(models.Model):
 
 class GamingSession(models.Model):
     nickname = models.CharField(max_length=32)
-    grade = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(9)])
+    grade = models.CharField(max_length=6)
     school = models.ForeignKey(School, on_delete=models.CASCADE)
     score = models.IntegerField()
     time_left = models.IntegerField()
