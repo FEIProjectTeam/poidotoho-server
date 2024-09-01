@@ -53,7 +53,13 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOWED_ORIGINS = [
+    "https://b2bportal.csobpoistovna.sk",
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://b2bportal.csobpoistovna.sk",
+]
 
 ROOT_URLCONF = "core.urls"
 
